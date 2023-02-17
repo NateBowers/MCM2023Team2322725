@@ -1,0 +1,13 @@
+Game plan:
+
+Make data nice
+
+Find important features
+
+make models
+
+Determine which is the best
+
+write it all up
+
+have fun!
