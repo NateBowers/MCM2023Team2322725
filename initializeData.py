@@ -24,6 +24,14 @@ def guessStats(data):
     return mean.astype('float64')
 
 
+data = readData('Problem_C_Data_Wordle.csv')
+print(data)
 
+words = data.T[2]
 
+print(words)
+print(type(words))
 
+for word in words:
+     if len(word) != 5:
+          print("'"+ word+ "'"+ " has length of: " + str(len(word)))
