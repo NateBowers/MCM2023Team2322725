@@ -4,12 +4,16 @@ import numpy as np
 import pandas as pd
 
 
+
 newColNames = ['date', 'contestNum', 'word', 'numResults', 'numHard', 'oneTry', 'twoTry', 'threeTry', 'fourTry', 'fiveTry', 'sixTry', 'sevenTry']
+
 
 
 def readData(filename, colNames=newColNames, pdArray=False):
     df = pd.read_csv(str(filename))
+    # rename columns
     df.columns=newColNames
+    # can output as either numpy array or pandas dataframe, default is nparray
     if pdArray:
         return df
     else:
