@@ -1,6 +1,7 @@
 # Discrete Fourier Transform to see if there are any periodic trends within the data.
 
 import numpy as np
+import pandas as pd
 from scipy.fft import rfft, rfftfreq
 from matplotlib import pyplot as plt
 from initializeData import readData
@@ -15,8 +16,8 @@ print(data.shape)
 
 testData = data[7]
 
-plt.plot(testData)
-plt.show()
+# plt.plot(testData)
+# plt.show()
 
 
     
@@ -32,8 +33,33 @@ def fourier(data):
 
 
 
-for row in data:
-    rowTransform = fourier(row)
-    plt.plot(rowTransform[0], rowTransform[1])
-    plt.show()
-    print(row)
+noise = np.random.normal(0,.5,100)
+foo = np.linspace(1,50, num=100)
+bar = np.sin(foo)
+bar2 = np.sin(foo*4)
+bar3 = bar+bar2
+plt.plot(bar3)
+plt.show()
+
+baz = bar3 + noise
+plt.plot(baz)
+plt.show()
+
+example = fourier(baz)
+plt.plot(example[0], example[1])
+plt.show()
+
+auto = pd.plotting.autocorrelation_plot(baz)
+auto.plot()
+plt.show()
+
+# for row in data:
+
+row = data[7]
+autoCorPlt = pd.plotting.autocorrelation_plot(row)
+autoCorPlt.plot()
+plt.show()
+rowTransform = fourier(row)
+plt.plot(rowTransform[0], rowTransform[1])
+plt.show()
+

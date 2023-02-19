@@ -28,7 +28,12 @@ def guessStats(data):
 
 if __name__ == '__main__':
     data = readData('Problem_C_Data_Wordle.csv')
-    print(data)
+
+    data = np.delete(data.T, [0,2], axis=0)
+    r = np.corrcoef(data.astype(float))
+    print(r)
+
+
 
     # words = data.T[2]
 
