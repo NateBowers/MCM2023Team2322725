@@ -40,7 +40,7 @@ def plot_vs_epoch(name, output_path, values1, values2=None, compare=False, displ
         plt.ylabel("Probability")
         plt.legend()
     plt.title(name)
-    plt.savefig(save_path)
+    plt.savefig(save_path, dpi=300)
     if display:
         plt.show()
 
@@ -191,7 +191,7 @@ if __name__=="__main__":
 
     # print(words)
 
-    output = data[:,5:11]
+    output = data[:,5:12]
     print(input.shape)
     print(output.shape)
 

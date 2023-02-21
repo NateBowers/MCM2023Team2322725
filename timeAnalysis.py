@@ -25,10 +25,11 @@ def fourier(data):
 row = data[7]
 autoCorPlt = pd.plotting.autocorrelation_plot(row)
 autoCorPlt.plot()
+plt.savefig('Autocurrelation', dpi=300)
 plt.show()
-plt.savefig('Autocurrelation')
+
 rowTransform = fourier(row)
 plt.plot(rowTransform[0], rowTransform[1])
+plt.savefig('Fourier',  dpi=300)
 plt.show()
-plt.savefig('Fourier')
 
